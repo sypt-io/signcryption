@@ -215,7 +215,11 @@ public class KSMFactory {
 			
 			List<Certificate> certificateChain = new ArrayList<>(4);
 			certificateChain.add(generateCertificate(data, keyPair, masterKSM, usage)); 
-			certificateChain.addAll(Arrays.asList(masterKSM.getCertificateChain()));
+			
+			List<Certificate> masterCertificateChain = Arrays.asList(masterKSM.getCertificateChain());
+			if (masterCertificateChain != null) {
+				certificateChain.addAll(masterCertificateChain);
+			}
 
 			ks.setKeyEntry(
 				data.alias(), 
