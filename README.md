@@ -73,6 +73,6 @@ try (KSM ksm = new DataKSM(
 	// Create your Sypter
 	Sypter<YourSypterable> sypter = new YourSypter(ksm);
 	// Unsypt your data
-	YourSypterable yourData = sypter.decodeAndUnsypt(encryptedData YourSypterable.class);
+	YourSypterable yourData = sypter.decodeAndUnsypt(encryptedData, YourSypterable.class);
 }
 ```
