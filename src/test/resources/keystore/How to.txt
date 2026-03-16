@@ -1,0 +1,5 @@
+keytool -genkey -validity 730 -alias sypt-crypto-data -keystore C:\Cert\sypt-crypto-data-ec.p12 -keypass sypt-crypto-data-pass -storepass sypt-crypto-data-pass -groupname secp384r1 -keyalg EC -dname "CN=sypt.io" -storetype PKCS12
+keytool -export -rfc -keystore C:\Cert\sypt-crypto-data-ec.p12 -storepass sypt-crypto-data-pass -alias sypt-crypto-data -file C:\Cert\sypt-crypto-data-ec.crt -storetype PKCS12
+
+keytool -genkey -validity 730 -alias sypt-crypto-data -keystore C:\Cert\sypt-crypto-data-rsa.p12 -keypass sypt-crypto-data-pass -storepass sypt-crypto-data-pass -keysize 4096 -keyalg RSA -dname "CN=sypt.io" -storetype PKCS12
+keytool -export -rfc -keystore C:\Cert\sypt-crypto-data-rsa.p12 -storepass sypt-crypto-data-pass -alias sypt-crypto-data -file C:\Cert\sypt-crypto-data-rsa.crt -storetype PKCS12
